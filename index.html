@@ -20,8 +20,6 @@
             color: #222;
         }
 
-        /* NAVBAR */
-
         nav {
             background-color: #111827;
             padding: 18px 50px;
@@ -155,6 +153,8 @@
             color: white;
         }
 
+        /* HERO CARD */
+
         .hero-card {
             flex: 0 0 360px;
             background-color: white;
@@ -165,18 +165,14 @@
             animation: floatCard 4s ease-in-out infinite;
         }
 
-        .profile-circle {
-            width: 170px;
-            height: 170px;
+        .profile-image {
+            width: 180px;
+            height: 180px;
             margin: 0 auto 25px;
-            background-color: #2563eb;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 55px;
-            font-weight: bold;
+            object-fit: cover;
+            display: block;
+            border: 6px solid #2563eb;
             box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
         }
 
@@ -358,68 +354,6 @@
 
         .project-button:hover {
             background-color: #1d4ed8;
-        }
-
-        /* PROJECT MODAL */
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(17, 24, 39, 0.7);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .modal.show {
-            display: flex;
-        }
-
-        .modal-content {
-            background-color: white;
-            width: 100%;
-            max-width: 600px;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            position: relative;
-            animation: modalAnimation 0.3s ease;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            border: none;
-            background: none;
-            font-size: 30px;
-            color: #6b7280;
-            cursor: pointer;
-        }
-
-        .close-modal:hover {
-            color: #111827;
-        }
-
-        .modal-icon {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-
-        .modal-content h2 {
-            color: #2563eb;
-            margin-bottom: 15px;
-        }
-
-        .modal-content p {
-            color: #4b5563;
-            font-size: 17px;
-            line-height: 1.7;
         }
 
         /* PRICING */
@@ -760,7 +694,62 @@
             transform: translateY(-4px);
         }
 
-        /* ANIMATIONS */
+        /* MODAL */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 24, 39, 0.7);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            animation: modalAnimation 0.3s ease;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            border: none;
+            background: none;
+            font-size: 30px;
+            color: #6b7280;
+            cursor: pointer;
+        }
+
+        .modal-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .modal-content h2 {
+            color: #2563eb;
+        }
+
+        .modal-content p {
+            color: #4b5563;
+            font-size: 17px;
+            line-height: 1.7;
+        }
 
         @keyframes floatCard {
             0% {
@@ -857,10 +846,9 @@
                 flex-basis: auto;
             }
 
-            .profile-circle {
-                width: 140px;
-                height: 140px;
-                font-size: 45px;
+            .profile-image {
+                width: 150px;
+                height: 150px;
             }
 
             .service-card,
@@ -887,10 +875,6 @@
             .footer-container {
                 flex-direction: column;
                 gap: 30px;
-            }
-
-            .modal-content {
-                padding: 30px 20px;
             }
 
             .back-to-top {
@@ -929,8 +913,6 @@
         </div>
 
     </nav>
-
-    <!-- HERO -->
 
     <section class="hero" id="home">
 
@@ -974,9 +956,11 @@
 
             <div class="hero-card">
 
-                <div class="profile-circle">
-                    H
-                </div>
+                <img
+                    src="mine.jpg"
+                    alt="Haris"
+                    class="profile-image"
+                >
 
                 <h2>
                     Haris Web Design
@@ -992,8 +976,6 @@
 
     </section>
 
-    <!-- ABOUT -->
-
     <section class="about" id="about">
 
         <h2 class="section-title">
@@ -1008,8 +990,6 @@
 
     </section>
 
-    <!-- SERVICES -->
-
     <section class="services" id="services">
 
         <h2 class="section-title">
@@ -1019,49 +999,32 @@
         <div class="service-container">
 
             <div class="service-card">
-
-                <h3>
-                    Website Design
-                </h3>
-
+                <h3>Website Design</h3>
                 <p>
                     I create modern and professional
                     websites for businesses and individuals.
                 </p>
-
             </div>
 
             <div class="service-card">
-
-                <h3>
-                    UI/UX Design
-                </h3>
-
+                <h3>UI/UX Design</h3>
                 <p>
                     I design clean and user-friendly
                     website interfaces.
                 </p>
-
             </div>
 
             <div class="service-card">
-
-                <h3>
-                    Responsive Design
-                </h3>
-
+                <h3>Responsive Design</h3>
                 <p>
                     I make websites that work properly
                     on mobile, tablet and desktop.
                 </p>
-
             </div>
 
         </div>
 
     </section>
-
-    <!-- SKILLS -->
 
     <section class="skills" id="skills">
 
@@ -1074,7 +1037,6 @@
             <div class="skill">
 
                 <div class="skill-info">
-
                     <span class="skill-name">
                         HTML & CSS
                     </span>
@@ -1082,7 +1044,6 @@
                     <span class="skill-percent">
                         90%
                     </span>
-
                 </div>
 
                 <div class="skill-bar">
@@ -1094,7 +1055,6 @@
             <div class="skill">
 
                 <div class="skill-info">
-
                     <span class="skill-name">
                         UI/UX Design
                     </span>
@@ -1102,7 +1062,6 @@
                     <span class="skill-percent">
                         85%
                     </span>
-
                 </div>
 
                 <div class="skill-bar">
@@ -1114,7 +1073,6 @@
             <div class="skill">
 
                 <div class="skill-info">
-
                     <span class="skill-name">
                         Responsive Design
                     </span>
@@ -1122,7 +1080,6 @@
                     <span class="skill-percent">
                         90%
                     </span>
-
                 </div>
 
                 <div class="skill-bar">
@@ -1134,7 +1091,6 @@
             <div class="skill">
 
                 <div class="skill-info">
-
                     <span class="skill-name">
                         Graphic Design
                     </span>
@@ -1142,7 +1098,6 @@
                     <span class="skill-percent">
                         80%
                     </span>
-
                 </div>
 
                 <div class="skill-bar">
@@ -1154,8 +1109,6 @@
         </div>
 
     </section>
-
-    <!-- PROJECTS -->
 
     <section class="projects" id="projects">
 
@@ -1265,8 +1218,6 @@
 
     </section>
 
-    <!-- PRICING -->
-
     <section class="pricing" id="pricing">
 
         <h2 class="section-title">
@@ -1287,23 +1238,10 @@
                 </div>
 
                 <ul>
-
-                    <li>
-                        1 Page Website
-                    </li>
-
-                    <li>
-                        Responsive Design
-                    </li>
-
-                    <li>
-                        Basic Styling
-                    </li>
-
-                    <li>
-                        3 Days Delivery
-                    </li>
-
+                    <li>1 Page Website</li>
+                    <li>Responsive Design</li>
+                    <li>Basic Styling</li>
+                    <li>3 Days Delivery</li>
                 </ul>
 
                 <a
@@ -1331,27 +1269,11 @@
                 </div>
 
                 <ul>
-
-                    <li>
-                        5 Page Website
-                    </li>
-
-                    <li>
-                        Responsive Design
-                    </li>
-
-                    <li>
-                        Modern UI/UX
-                    </li>
-
-                    <li>
-                        Animations
-                    </li>
-
-                    <li>
-                        5 Days Delivery
-                    </li>
-
+                    <li>5 Page Website</li>
+                    <li>Responsive Design</li>
+                    <li>Modern UI/UX</li>
+                    <li>Animations</li>
+                    <li>5 Days Delivery</li>
                 </ul>
 
                 <a
@@ -1375,27 +1297,11 @@
                 </div>
 
                 <ul>
-
-                    <li>
-                        10 Page Website
-                    </li>
-
-                    <li>
-                        Advanced UI/UX
-                    </li>
-
-                    <li>
-                        Animations
-                    </li>
-
-                    <li>
-                        Mobile Optimization
-                    </li>
-
-                    <li>
-                        7 Days Delivery
-                    </li>
-
+                    <li>10 Page Website</li>
+                    <li>Advanced UI/UX</li>
+                    <li>Animations</li>
+                    <li>Mobile Optimization</li>
+                    <li>7 Days Delivery</li>
                 </ul>
 
                 <a
@@ -1410,8 +1316,6 @@
         </div>
 
     </section>
-
-    <!-- TESTIMONIALS -->
 
     <section class="testimonials" id="testimonials">
 
@@ -1490,8 +1394,6 @@
         </div>
 
     </section>
-
-    <!-- FAQ -->
 
     <section class="faq" id="faq">
 
@@ -1610,8 +1512,6 @@
 
     </section>
 
-    <!-- SOCIAL -->
-
     <section class="social" id="social">
 
         <h2 class="section-title">
@@ -1657,8 +1557,6 @@
 
     </section>
 
-    <!-- CONTACT -->
-
     <section class="contact" id="contact">
 
         <h2 class="section-title">
@@ -1694,8 +1592,6 @@
         </form>
 
     </section>
-
-    <!-- FOOTER -->
 
     <footer>
 
@@ -1838,8 +1734,6 @@
         </div>
 
     </div>
-
-    <!-- BACK TO TOP -->
 
     <button
         class="back-to-top"
