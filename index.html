@@ -8,7 +8,6 @@
         html{scroll-behavior:smooth}
         body{background:#f4f7ff;font-family:Arial,sans-serif;margin:0;color:#222}
 
-        /* NAVBAR */
         nav{
             background:#111827;
             padding:18px 50px;
@@ -29,11 +28,7 @@
 
         .logo span{color:#60a5fa}
 
-        .nav-links{
-            display:flex;
-            gap:25px
-        }
-
+        .nav-links{display:flex;gap:25px}
         .nav-links a{
             color:white;
             text-decoration:none;
@@ -53,13 +48,13 @@
         }
 
         /* HERO */
+
         .hero{
             min-height:650px;
             display:flex;
             justify-content:center;
             align-items:center;
-            padding:80px 8%;
-            background:linear-gradient(135deg,#f4f7ff,#eaf2ff)
+            padding:80px 8%
         }
 
         .hero-container{
@@ -68,27 +63,20 @@
             display:flex;
             align-items:center;
             justify-content:space-between;
-            gap:70px
+            gap:60px
         }
 
-        .hero-text{
-            flex:1
-        }
+        .hero-text{flex:1}
 
         .small-text{
-            display:inline-block;
             color:#2563eb;
-            background:#dbeafe;
-            padding:8px 16px;
-            border-radius:30px;
-            font-size:15px;
+            font-size:18px;
             font-weight:bold;
-            margin-bottom:18px;
-            letter-spacing:1px
+            margin-bottom:15px
         }
 
         .hero h1{
-            font-size:60px;
+            font-size:58px;
             line-height:1.1;
             margin:0 0 20px;
             color:#111827
@@ -100,8 +88,7 @@
             font-size:21px;
             line-height:1.7;
             color:#4b5563;
-            margin-bottom:30px;
-            max-width:650px
+            margin-bottom:30px
         }
 
         .hero-buttons{
@@ -139,8 +126,7 @@
 
         .secondary-button:hover{
             background:#2563eb;
-            color:white;
-            transform:translateY(-3px)
+            color:white
         }
 
         .hero-card{
@@ -150,8 +136,7 @@
             border-radius:25px;
             text-align:center;
             box-shadow:0 15px 40px rgba(0,0,0,.12);
-            animation:floatCard 4s ease-in-out infinite;
-            border:1px solid #e5e7eb
+            animation:floatCard 4s ease-in-out infinite
         }
 
         .profile-image{
@@ -176,7 +161,8 @@
         }
 
         /* SECTIONS */
-        .about,.contact,.social,.skills,.testimonials,.faq{
+
+        .about,.social,.skills,.testimonials,.faq{
             background:white;
             text-align:center;
             padding:90px 20px
@@ -202,6 +188,7 @@
         }
 
         /* SKILLS */
+
         .skills-container{
             max-width:800px;
             margin:0 auto;
@@ -249,6 +236,7 @@
         .graphic-skill{width:80%}
 
         /* CARDS */
+
         .service-container,
         .project-container,
         .testimonial-container,
@@ -293,6 +281,7 @@
         }
 
         /* PROJECTS */
+
         .project-card{
             width:320px;
             min-height:330px;
@@ -327,10 +316,7 @@
             box-shadow:0 8px 20px rgba(37,99,235,.12)
         }
 
-        .project-card h3{
-            margin:10px 0 12px
-        }
-
+        .project-card h3{margin:10px 0 12px}
         .project-card p{margin:0}
 
         .project-tags{
@@ -369,15 +355,14 @@
         }
 
         /* PRICING */
+
         .pricing-card{
             width:300px;
             text-align:center;
             position:relative
         }
 
-        .pricing-card.popular{
-            border:3px solid #2563eb
-        }
+        .pricing-card.popular{border:3px solid #2563eb}
 
         .popular-label{
             position:absolute;
@@ -436,7 +421,8 @@
 
         .pricing-button:hover{background:#1d4ed8}
 
-        /* TESTIMONIALS */
+        /* REVIEWS */
+
         .testimonial-card{
             width:320px;
             text-align:left
@@ -468,6 +454,7 @@
         }
 
         /* FAQ */
+
         .faq-container{
             max-width:800px;
             margin:auto;
@@ -508,13 +495,10 @@
         }
 
         .faq-answer.show{display:block}
-
-        .faq-icon{
-            color:#2563eb;
-            font-size:22px
-        }
+        .faq-icon{color:#2563eb;font-size:22px}
 
         /* SOCIAL */
+
         .social-links{
             display:flex;
             justify-content:center;
@@ -545,20 +529,87 @@
             margin-bottom:10px
         }
 
-        /* CONTACT */
+        /* NEW PROFESSIONAL CONTACT */
+
+        .contact{
+            background:#eef5ff;
+            padding:90px 20px
+        }
+
+        .contact-wrapper{
+            max-width:1050px;
+            margin:auto;
+            display:flex;
+            gap:45px;
+            align-items:stretch;
+            text-align:left
+        }
+
+        .contact-info{
+            flex:1;
+            background:#111827;
+            color:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 12px 30px rgba(0,0,0,.12)
+        }
+
+        .contact-info h3{
+            font-size:28px;
+            margin-top:0;
+            margin-bottom:15px
+        }
+
+        .contact-info p{
+            color:#d1d5db;
+            font-size:17px;
+            line-height:1.7
+        }
+
+        .contact-detail{
+            margin-top:25px;
+            padding:15px;
+            background:#1f2937;
+            border-radius:10px
+        }
+
+        .contact-detail strong{
+            display:block;
+            color:#60a5fa;
+            margin-bottom:5px
+        }
+
         .contact-form{
+            flex:1;
             max-width:600px;
-            margin:auto
+            background:white;
+            padding:35px;
+            border-radius:20px;
+            box-shadow:0 12px 30px rgba(0,0,0,.1)
+        }
+
+        .contact-form h3{
+            margin-top:0;
+            color:#111827;
+            font-size:26px
         }
 
         .contact-form input,
         .contact-form textarea{
             width:100%;
             padding:15px;
-            margin:10px 0;
+            margin:8px 0 12px;
             border:1px solid #d1d5db;
-            border-radius:8px;
-            font-size:16px
+            border-radius:9px;
+            font-size:16px;
+            outline:none;
+            transition:.3s
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus{
+            border-color:#2563eb;
+            box-shadow:0 0 0 3px rgba(37,99,235,.1)
         }
 
         .contact-form textarea{
@@ -567,18 +618,24 @@
         }
 
         .contact-form button{
+            width:100%;
             background:#2563eb;
             color:white;
             padding:15px 30px;
             border:none;
-            border-radius:8px;
+            border-radius:9px;
             font-size:17px;
-            cursor:pointer
+            cursor:pointer;
+            transition:.3s
         }
 
-        .contact-form button:hover{background:#1d4ed8}
+        .contact-form button:hover{
+            background:#1d4ed8;
+            transform:translateY(-2px)
+        }
 
         /* FOOTER */
+
         footer{
             background:#111827;
             color:white;
@@ -666,7 +723,8 @@
             margin:0
         }
 
-        /* BACK TO TOP */
+        /* BUTTON */
+
         .back-to-top{
             position:fixed;
             right:25px;
@@ -688,6 +746,7 @@
         }
 
         /* MODAL */
+
         .modal{
             display:none;
             position:fixed;
@@ -739,7 +798,6 @@
             line-height:1.7
         }
 
-        /* ANIMATIONS */
         @keyframes floatCard{
             0%{transform:translateY(0)}
             50%{transform:translateY(-10px)}
@@ -756,6 +814,7 @@
         }
 
         /* MOBILE */
+
         @media(max-width:800px){
 
             nav{
@@ -781,9 +840,7 @@
                 border-top:1px solid #374151
             }
 
-            .hero{
-                padding:60px 20px
-            }
+            .hero{padding:60px 20px}
 
             .hero-container{
                 flex-direction:column;
@@ -791,21 +848,12 @@
                 gap:40px
             }
 
-            .hero-text{
-                width:100%
-            }
+            .hero-text{width:100%}
 
-            .hero h1{
-                font-size:42px
-            }
+            .hero h1{font-size:42px}
+            .hero-text p{font-size:18px}
 
-            .hero-text p{
-                font-size:18px
-            }
-
-            .hero-buttons{
-                justify-content:center
-            }
+            .hero-buttons{justify-content:center}
 
             .hero-card{
                 width:100%;
@@ -830,8 +878,18 @@
                 width:90%
             }
 
-            .contact-form{
+            .contact-wrapper{
+                flex-direction:column;
                 width:90%
+            }
+
+            .contact-form{
+                width:100%;
+                max-width:none
+            }
+
+            .contact-info{
+                width:100%
             }
 
             .social-link{
@@ -854,7 +912,6 @@
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <a href="#home" class="logo">Haris<span>Web</span></a>
 
@@ -874,20 +931,16 @@
     </div>
 </nav>
 
-<!-- HERO / HOME -->
+
 <section class="hero" id="home">
 
     <div class="hero-container">
 
         <div class="hero-text">
 
-            <div class="small-text">WEB DESIGNER & CREATIVE DEVELOPER</div>
+            <div class="small-text">WEB DESIGNER</div>
 
-            <h1>
-                I Design
-                <span>Modern Websites</span>
-                That Stand Out
-            </h1>
+            <h1>Hello, I am <span>Haris</span></h1>
 
             <p>
                 I create modern, professional and responsive websites
@@ -898,16 +951,17 @@
             <div class="hero-buttons">
 
                 <button class="primary-button" onclick="goToContact()">
-                    Let's Work Together
+                    Get Started
                 </button>
 
                 <button class="secondary-button" onclick="goToProjects()">
-                    View My Projects
+                    View Projects
                 </button>
 
             </div>
 
         </div>
+
 
         <div class="hero-card">
 
@@ -923,7 +977,7 @@
 
 </section>
 
-<!-- ABOUT -->
+
 <section class="about" id="about">
 
     <h2 class="section-title">About Me</h2>
@@ -935,7 +989,7 @@
 
 </section>
 
-<!-- SERVICES -->
+
 <section class="services" id="services">
 
     <h2 class="section-title">My Services</h2>
@@ -969,7 +1023,7 @@
 
 </section>
 
-<!-- SKILLS -->
+
 <section class="skills" id="skills">
 
     <h2 class="section-title">My Skills</h2>
@@ -981,7 +1035,6 @@
                 <span class="skill-name">HTML & CSS</span>
                 <span class="skill-percent">90%</span>
             </div>
-
             <div class="skill-bar">
                 <div class="skill-progress html-skill"></div>
             </div>
@@ -992,7 +1045,6 @@
                 <span class="skill-name">UI/UX Design</span>
                 <span class="skill-percent">85%</span>
             </div>
-
             <div class="skill-bar">
                 <div class="skill-progress uiux-skill"></div>
             </div>
@@ -1003,7 +1055,6 @@
                 <span class="skill-name">Responsive Design</span>
                 <span class="skill-percent">90%</span>
             </div>
-
             <div class="skill-bar">
                 <div class="skill-progress responsive-skill"></div>
             </div>
@@ -1014,7 +1065,6 @@
                 <span class="skill-name">Graphic Design</span>
                 <span class="skill-percent">80%</span>
             </div>
-
             <div class="skill-bar">
                 <div class="skill-progress graphic-skill"></div>
             </div>
@@ -1024,7 +1074,7 @@
 
 </section>
 
-<!-- PROJECTS -->
+
 <section class="projects" id="projects">
 
     <h2 class="section-title">My Projects</h2>
@@ -1041,8 +1091,7 @@
 
                 <p>
                     A modern and responsive business website designed
-                    with a clean, professional layout and user-friendly
-                    experience.
+                    with a clean, professional layout and user-friendly experience.
                 </p>
 
                 <div class="project-tags">
@@ -1054,11 +1103,7 @@
             </div>
 
             <button class="project-button"
-                onclick="openProject(
-                '🌐',
-                'Business Website',
-                'A modern and professional business website with responsive design, clean layout and user-friendly navigation.'
-                )">
+                onclick="openProject('🌐','Business Website','A modern and professional business website with responsive design, clean layout and user-friendly navigation.')">
                 View Project
             </button>
 
@@ -1074,8 +1119,7 @@
                 <h3>Portfolio Website</h3>
 
                 <p>
-                    A clean personal portfolio website for a creative
-                    professional.
+                    A clean personal portfolio website for a creative professional.
                 </p>
 
                 <div class="project-tags">
@@ -1087,11 +1131,7 @@
             </div>
 
             <button class="project-button"
-                onclick="openProject(
-                '🎨',
-                'Portfolio Website',
-                'A stylish personal portfolio website designed to showcase skills, projects, services and professional experience.'
-                )">
+                onclick="openProject('🎨','Portfolio Website','A stylish personal portfolio website designed to showcase skills, projects, services and professional experience.')">
                 View Project
             </button>
 
@@ -1107,8 +1147,7 @@
                 <h3>Mobile Friendly Website</h3>
 
                 <p>
-                    A responsive website that works smoothly on
-                    mobile devices.
+                    A responsive website that works smoothly on mobile devices.
                 </p>
 
                 <div class="project-tags">
@@ -1120,11 +1159,7 @@
             </div>
 
             <button class="project-button"
-                onclick="openProject(
-                '📱',
-                'Mobile Friendly Website',
-                'A responsive website optimized for mobile, tablet and desktop screens with a smooth user experience.'
-                )">
+                onclick="openProject('📱','Mobile Friendly Website','A responsive website optimized for mobile, tablet and desktop screens with a smooth user experience.')">
                 View Project
             </button>
 
@@ -1134,7 +1169,7 @@
 
 </section>
 
-<!-- PRICING -->
+
 <section class="pricing" id="pricing">
 
     <h2 class="section-title">Pricing Plans</h2>
@@ -1214,7 +1249,7 @@
 
 </section>
 
-<!-- TESTIMONIALS -->
+
 <section class="testimonials" id="testimonials">
 
     <h2 class="section-title">Client Reviews</h2>
@@ -1222,200 +1257,204 @@
     <div class="testimonial-container">
 
         <div class="testimonial-card">
-
             <div class="stars">★★★★★</div>
 
             <p class="testimonial-text">
-                "Haris created a clean and professional website
-                for my business. I really liked the final design."
+                "Haris created a clean and professional website for my business.
+                I really liked the final design."
             </p>
 
             <div class="client-name">Ahmed Khan</div>
             <div class="client-role">Business Owner</div>
-
         </div>
 
 
         <div class="testimonial-card">
-
             <div class="stars">★★★★★</div>
 
             <p class="testimonial-text">
-                "The website looks modern, works perfectly on
-                mobile and was completed professionally."
+                "The website looks modern, works perfectly on mobile
+                and was completed professionally."
             </p>
 
             <div class="client-name">Ali Raza</div>
             <div class="client-role">Entrepreneur</div>
-
         </div>
 
 
         <div class="testimonial-card">
-
             <div class="stars">★★★★★</div>
 
             <p class="testimonial-text">
-                "Great communication and a very nice responsive
-                website. Highly recommended."
+                "Great communication and a very nice responsive website.
+                Highly recommended."
             </p>
 
             <div class="client-name">Usman Malik</div>
             <div class="client-role">Freelancer</div>
-
         </div>
 
     </div>
 
 </section>
 
-<!-- FAQ -->
+
 <section class="faq" id="faq">
 
-    <h2 class="section-title">
-        Frequently Asked Questions
-    </h2>
+    <h2 class="section-title">Frequently Asked Questions</h2>
 
     <div class="faq-container">
 
         <div class="faq-item">
-
             <button class="faq-question" onclick="toggleFAQ(1)">
                 How long does a website take?
                 <span class="faq-icon" id="icon1">+</span>
             </button>
 
             <div class="faq-answer" id="answer1">
-                A simple website can usually be completed within
-                a few days, depending on the number of pages and
-                required features.
+                A simple website can usually be completed within a few days,
+                depending on the number of pages and required features.
             </div>
-
         </div>
 
 
         <div class="faq-item">
-
             <button class="faq-question" onclick="toggleFAQ(2)">
                 Will my website work on mobile?
                 <span class="faq-icon" id="icon2">+</span>
             </button>
 
             <div class="faq-answer" id="answer2">
-                Yes. The website is designed to be responsive so
-                it can adjust to mobile, tablet and desktop screens.
+                Yes. The website is designed to be responsive so it can
+                adjust to mobile, tablet and desktop screens.
             </div>
-
         </div>
 
 
         <div class="faq-item">
-
             <button class="faq-question" onclick="toggleFAQ(3)">
                 Can I request changes?
                 <span class="faq-icon" id="icon3">+</span>
             </button>
 
             <div class="faq-answer" id="answer3">
-                Yes. Changes and revisions can be discussed
-                according to the selected project package.
+                Yes. Changes and revisions can be discussed according
+                to the selected project package.
             </div>
-
         </div>
 
 
         <div class="faq-item">
-
             <button class="faq-question" onclick="toggleFAQ(4)">
                 Do you design custom websites?
                 <span class="faq-icon" id="icon4">+</span>
             </button>
 
             <div class="faq-answer" id="answer4">
-                Yes. Every project can be customized according
-                to the client's requirements, content and
-                preferred style.
+                Yes. Every project can be customized according to
+                the client's requirements, content and preferred style.
             </div>
-
         </div>
 
     </div>
 
 </section>
 
-<!-- SOCIAL -->
+
 <section class="social" id="social">
 
     <h2 class="section-title">Connect With Me</h2>
 
     <div class="social-links">
 
-        <a href="https://www.facebook.com/"
-           target="_blank"
-           class="social-link">
-
+        <a href="https://www.facebook.com/" target="_blank" class="social-link">
             <span class="social-icon">📘</span>
             Facebook
-
         </a>
 
-
-        <a href="https://www.instagram.com/"
-           target="_blank"
-           class="social-link">
-
+        <a href="https://www.instagram.com/" target="_blank" class="social-link">
             <span class="social-icon">📸</span>
             Instagram
-
         </a>
 
-
-        <a href="https://www.linkedin.com/"
-           target="_blank"
-           class="social-link">
-
+        <a href="https://www.linkedin.com/" target="_blank" class="social-link">
             <span class="social-icon">💼</span>
             LinkedIn
-
         </a>
 
     </div>
 
 </section>
 
-<!-- CONTACT -->
+
+<!-- PROFESSIONAL CONTACT SECTION -->
+
 <section class="contact" id="contact">
 
-    <h2 class="section-title">Contact Me</h2>
+    <h2 class="section-title">Let's Work Together</h2>
 
-    <form class="contact-form" onsubmit="sendMessage(event)">
+    <div class="contact-wrapper">
 
-        <input
-            type="text"
-            placeholder="Your Name"
-            required
-        >
+        <div class="contact-info">
 
-        <input
-            type="email"
-            placeholder="Your Email"
-            required
-        >
+            <h3>Have a Project in Mind?</h3>
 
-        <textarea
-            placeholder="Your Message"
-            required
-        ></textarea>
+            <p>
+                I'd love to hear about your project. Send me a message
+                and let's discuss how I can help you create a modern,
+                professional and responsive website.
+            </p>
 
-        <button type="submit">
-            Send Message
-        </button>
+            <div class="contact-detail">
+                <strong>📧 Email</strong>
+                harisjamil435@gmail.com
+            </div>
 
-    </form>
+            <div class="contact-detail">
+                <strong>💻 Services</strong>
+                Website Design • UI/UX • Responsive Design
+            </div>
+
+            <div class="contact-detail">
+                <strong>⚡ Response</strong>
+                I usually respond as soon as possible.
+            </div>
+
+        </div>
+
+
+        <form class="contact-form" onsubmit="sendMessage(event)">
+
+            <h3>Send Me a Message</h3>
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                placeholder="Tell me about your project..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message →
+            </button>
+
+        </form>
+
+    </div>
 
 </section>
 
-<!-- FOOTER -->
+
 <footer>
 
     <div class="footer-container">
@@ -1437,13 +1476,11 @@
             <h3>Quick Links</h3>
 
             <ul class="footer-links">
-
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-
             </ul>
 
         </div>
@@ -1455,17 +1492,9 @@
 
             <div class="footer-social">
 
-                <a href="https://www.facebook.com/" target="_blank">
-                    f
-                </a>
-
-                <a href="https://www.instagram.com/" target="_blank">
-                    ig
-                </a>
-
-                <a href="https://www.linkedin.com/" target="_blank">
-                    in
-                </a>
+                <a href="https://www.facebook.com/" target="_blank">f</a>
+                <a href="https://www.instagram.com/" target="_blank">ig</a>
+                <a href="https://www.linkedin.com/" target="_blank">in</a>
 
             </div>
 
@@ -1484,29 +1513,18 @@
 
 </footer>
 
+
 <!-- PROJECT MODAL -->
-<div
-    class="modal"
-    id="projectModal"
-    onclick="closeModalOutside(event)"
->
+
+<div class="modal" id="projectModal" onclick="closeModalOutside(event)">
 
     <div class="modal-content">
 
-        <button
-            class="close-modal"
-            onclick="closeProject()"
-        >
-            ×
-        </button>
+        <button class="close-modal" onclick="closeProject()">×</button>
 
-        <div class="modal-icon" id="modalIcon">
-            🌐
-        </div>
+        <div class="modal-icon" id="modalIcon">🌐</div>
 
-        <h2 id="modalTitle">
-            Project Title
-        </h2>
+        <h2 id="modalTitle">Project Title</h2>
 
         <p id="modalDescription">
             Project description.
@@ -1516,7 +1534,7 @@
 
 </div>
 
-<!-- BACK TO TOP -->
+
 <button class="back-to-top" onclick="goToTop()">
     ↑ Back to Top
 </button>
@@ -1553,8 +1571,8 @@ function goToTop(){
 
 function toggleFAQ(number){
 
-    let answer=document.getElementById("answer"+number);
-    let icon=document.getElementById("icon"+number);
+    let answer = document.getElementById("answer"+number);
+    let icon = document.getElementById("icon"+number);
 
     if(answer.classList.contains("show")){
 
@@ -1579,9 +1597,7 @@ function openProject(icon,title,description){
 }
 
 function closeProject(){
-
     document.getElementById("projectModal").classList.remove("show");
-
 }
 
 function closeModalOutside(event){
@@ -1596,14 +1612,9 @@ function sendMessage(event){
 
     event.preventDefault();
 
-    let name=event.target.querySelector(
-        'input[type="text"]'
-    ).value;
+    let name = event.target.querySelector('input[type="text"]').value;
 
-    alert(
-        "Thank you, "+name+
-        "! Your message has been received."
-    );
+    alert("Thank you, "+name+"! Your message has been received.");
 
     event.target.reset();
 }
