@@ -2,87 +2,865 @@
 <html>
 <head>
     <title>Haris Web Design</title>
+
     <style>
         *{box-sizing:border-box}
         html{scroll-behavior:smooth}
         body{background:#f4f7ff;font-family:Arial,sans-serif;margin:0;color:#222}
-        nav{background:#111827;padding:18px 50px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000}
-        .logo{color:white;font-size:24px;font-weight:bold;text-decoration:none}.logo span{color:#60a5fa}
-        .nav-links{display:flex;gap:25px}.nav-links a{color:white;text-decoration:none;font-size:17px;transition:.3s}.nav-links a:hover{color:#60a5fa}
-        .menu-button{display:none;background:none;border:none;color:white;font-size:30px;cursor:pointer}
-        .hero{min-height:650px;display:flex;justify-content:center;align-items:center;padding:80px 8%}
-        .hero-container{width:100%;max-width:1100px;display:flex;align-items:center;justify-content:space-between;gap:60px}
-        .hero-text{flex:1}.small-text{color:#2563eb;font-size:18px;font-weight:bold;margin-bottom:15px}
-        .hero h1{font-size:58px;line-height:1.1;margin:0 0 20px;color:#111827}.hero h1 span{color:#2563eb}
-        .hero-text p{font-size:21px;line-height:1.7;color:#4b5563;margin-bottom:30px}
-        .hero-buttons{display:flex;gap:15px;flex-wrap:wrap}
-        .primary-button{background:#2563eb;color:white;border:none;padding:15px 28px;border-radius:10px;font-size:17px;cursor:pointer;transition:.3s}
-        .primary-button:hover{background:#1d4ed8;transform:translateY(-3px)}
-        .secondary-button{background:white;color:#2563eb;border:2px solid #2563eb;padding:13px 28px;border-radius:10px;font-size:17px;cursor:pointer;transition:.3s}
-        .secondary-button:hover{background:#2563eb;color:white}
-        .hero-card{flex:0 0 360px;background:white;padding:40px;border-radius:25px;text-align:center;box-shadow:0 15px 40px rgba(0,0,0,.12);animation:floatCard 4s ease-in-out infinite}
-        .profile-image{width:180px;height:180px;margin:0 auto 25px;border-radius:50%;object-fit:cover;display:block;border:6px solid #2563eb;box-shadow:0 10px 30px rgba(37,99,235,.3)}
-        .hero-card h2{color:#111827;margin-bottom:10px}.hero-card p{color:#6b7280;font-size:16px}
-        .about,.contact,.social,.skills,.testimonials,.faq{background:white;text-align:center;padding:90px 20px}
-        .services,.projects,.pricing{padding:90px 20px;text-align:center}
-        .section-title{color:#111827;font-size:38px;margin-bottom:30px}
-        .about p{max-width:700px;margin:auto;font-size:20px;line-height:1.7;color:#4b5563}
-        .skills-container{max-width:800px;margin:0 auto;text-align:left}.skill{margin-bottom:25px}
-        .skill-info{display:flex;justify-content:space-between;margin-bottom:8px}.skill-name{font-size:18px;font-weight:bold;color:#111827}.skill-percent{font-size:17px;font-weight:bold;color:#2563eb}
-        .skill-bar{width:100%;height:14px;background:#e5e7eb;border-radius:20px;overflow:hidden}.skill-progress{height:100%;background:#2563eb;border-radius:20px;animation:progressAnimation 1.5s ease}
-        .html-skill{width:90%}.uiux-skill{width:85%}.responsive-skill{width:90%}.graphic-skill{width:80%}
-        .service-container,.project-container,.testimonial-container,.pricing-container{display:flex;justify-content:center;gap:25px;flex-wrap:wrap}
-        .service-card,.project-card,.testimonial-card,.pricing-card{background:white;width:280px;padding:30px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,.1);transition:.3s}
-        .service-card:hover,.project-card:hover,.testimonial-card:hover,.pricing-card:hover{transform:translateY(-10px);box-shadow:0 15px 35px rgba(0,0,0,.15)}
-        .service-card h3,.project-card h3{color:#2563eb;font-size:24px}.service-card p,.project-card p{font-size:17px;line-height:1.6;color:#4b5563}
-        .project-card{width:320px;min-height:330px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
-        .project-card:before{content:"";position:absolute;top:0;left:0;width:100%;height:5px;background:#2563eb}
-        .project-icon{width:78px;height:78px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;border-radius:20px;background:#eff6ff;font-size:42px;box-shadow:0 8px 20px rgba(37,99,235,.12)}
-        .project-card h3{margin:10px 0 12px}.project-card p{margin:0}
-        .project-tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}
-        .project-tag{background:#eff6ff;color:#2563eb;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:bold}
-        .project-button{background:#2563eb;color:white;border:none;padding:12px 22px;border-radius:8px;font-size:16px;cursor:pointer;margin-top:20px;transition:.3s;width:100%}
-        .project-button:hover{background:#1d4ed8;transform:translateY(-2px)}
-        .pricing-card{width:300px;text-align:center;position:relative}.pricing-card.popular{border:3px solid #2563eb}
-        .popular-label{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#2563eb;color:white;padding:7px 18px;border-radius:20px;font-size:13px;font-weight:bold}
-        .pricing-card h3{color:#111827;font-size:27px;margin-bottom:15px}.price{color:#2563eb;font-size:42px;font-weight:bold;margin-bottom:25px}.price span{font-size:17px;color:#6b7280;font-weight:normal}
-        .pricing-card ul{list-style:none;padding:0;margin:0 0 25px}.pricing-card li{padding:10px 0;color:#4b5563;border-bottom:1px solid #e5e7eb}
-        .pricing-button{display:inline-block;text-decoration:none;background:#2563eb;color:white;padding:13px 25px;border-radius:8px;font-size:16px;transition:.3s}.pricing-button:hover{background:#1d4ed8}
-        .testimonial-card{width:320px;text-align:left}.stars{color:#f59e0b;font-size:22px;margin-bottom:15px}.testimonial-text{color:#4b5563;font-size:17px;line-height:1.6;margin-bottom:20px}
-        .client-name{color:#111827;font-size:18px;font-weight:bold}.client-role{color:#6b7280;font-size:14px;margin-top:5px}
-        .faq-container{max-width:800px;margin:auto;text-align:left}.faq-item{background:#f4f7ff;margin-bottom:15px;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb}
-        .faq-question{width:100%;background:#f4f7ff;color:#111827;border:none;padding:20px;text-align:left;font-size:18px;font-weight:bold;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-        .faq-question:hover{background:#dbeafe}.faq-answer{display:none;padding:0 20px 20px;color:#4b5563;font-size:17px;line-height:1.6}.faq-answer.show{display:block}.faq-icon{color:#2563eb;font-size:22px}
-        .social-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}.social-link{width:180px;padding:20px;background:#f4f7ff;border-radius:12px;text-decoration:none;color:#111827;font-weight:bold;font-size:18px;transition:.3s}
-        .social-link:hover{transform:translateY(-7px);background:#dbeafe}.social-icon{display:block;font-size:35px;margin-bottom:10px}
-        .contact-form{max-width:600px;margin:auto}.contact-form input,.contact-form textarea{width:100%;padding:15px;margin:10px 0;border:1px solid #d1d5db;border-radius:8px;font-size:16px}
-        .contact-form textarea{height:150px;resize:none}.contact-form button{background:#2563eb;color:white;padding:15px 30px;border:none;border-radius:8px;font-size:17px;cursor:pointer}.contact-form button:hover{background:#1d4ed8}
-        footer{background:#111827;color:white;padding:55px 20px 25px}.footer-container{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:50px;flex-wrap:wrap}
-        .footer-column{flex:1;min-width:220px}.footer-column h3{color:white;font-size:21px;margin-bottom:20px}.footer-column p{color:#d1d5db;line-height:1.7;font-size:16px}
-        .footer-links{list-style:none;padding:0;margin:0}.footer-links li{margin-bottom:10px}.footer-links a{color:#d1d5db;text-decoration:none;transition:.3s}.footer-links a:hover{color:#60a5fa}
-        .footer-social{display:flex;gap:10px;flex-wrap:wrap}.footer-social a{width:42px;height:42px;border-radius:50%;background:#1f2937;color:white;text-decoration:none;display:flex;justify-content:center;align-items:center;font-size:18px;transition:.3s}
-        .footer-social a:hover{background:#2563eb;transform:translateY(-4px)}.footer-bottom{max-width:1100px;margin:40px auto 0;padding-top:20px;border-top:1px solid #374151;text-align:center}
-        .footer-bottom p{color:#9ca3af;font-size:14px;margin:0}
-        .back-to-top{position:fixed;right:25px;bottom:25px;background:#2563eb;color:white;border:none;border-radius:50px;padding:13px 20px;font-size:15px;cursor:pointer;box-shadow:0 5px 20px rgba(37,99,235,.3);transition:.3s}.back-to-top:hover{background:#1d4ed8;transform:translateY(-4px)}
-        .modal{display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(17,24,39,.7);justify-content:center;align-items:center;padding:20px}
-        .modal.show{display:flex}.modal-content{background:white;width:100%;max-width:600px;padding:40px;border-radius:20px;text-align:center;position:relative;animation:modalAnimation .3s ease}
-        .close-modal{position:absolute;top:15px;right:20px;border:none;background:none;font-size:30px;color:#6b7280;cursor:pointer}.modal-icon{font-size:60px;margin-bottom:15px}.modal-content h2{color:#2563eb}.modal-content p{color:#4b5563;font-size:17px;line-height:1.7}
-        @keyframes floatCard{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
-        @keyframes progressAnimation{from{width:0}}@keyframes modalAnimation{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+
+        nav{
+            background:#111827;
+            padding:18px 50px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:1000
+        }
+
+        .logo{
+            color:white;
+            font-size:24px;
+            font-weight:bold;
+            text-decoration:none
+        }
+
+        .logo span{color:#60a5fa}
+
+        .nav-links{
+            display:flex;
+            gap:25px
+        }
+
+        .nav-links a{
+            color:white;
+            text-decoration:none;
+            font-size:17px;
+            transition:.3s
+        }
+
+        .nav-links a:hover{color:#60a5fa}
+
+        .menu-button{
+            display:none;
+            background:none;
+            border:none;
+            color:white;
+            font-size:30px;
+            cursor:pointer
+        }
+
+        .hero{
+            min-height:650px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:80px 8%
+        }
+
+        .hero-container{
+            width:100%;
+            max-width:1100px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:60px
+        }
+
+        .hero-text{flex:1}
+
+        .small-text{
+            color:#2563eb;
+            font-size:18px;
+            font-weight:bold;
+            margin-bottom:15px
+        }
+
+        .hero h1{
+            font-size:58px;
+            line-height:1.1;
+            margin:0 0 20px;
+            color:#111827
+        }
+
+        .hero h1 span{color:#2563eb}
+
+        .hero-text p{
+            font-size:21px;
+            line-height:1.7;
+            color:#4b5563;
+            margin-bottom:30px
+        }
+
+        .hero-buttons{
+            display:flex;
+            gap:15px;
+            flex-wrap:wrap
+        }
+
+        .primary-button{
+            background:#2563eb;
+            color:white;
+            border:none;
+            padding:15px 28px;
+            border-radius:10px;
+            font-size:17px;
+            cursor:pointer;
+            transition:.3s
+        }
+
+        .primary-button:hover{
+            background:#1d4ed8;
+            transform:translateY(-3px)
+        }
+
+        .secondary-button{
+            background:white;
+            color:#2563eb;
+            border:2px solid #2563eb;
+            padding:13px 28px;
+            border-radius:10px;
+            font-size:17px;
+            cursor:pointer;
+            transition:.3s
+        }
+
+        .secondary-button:hover{
+            background:#2563eb;
+            color:white
+        }
+
+        .hero-card{
+            flex:0 0 360px;
+            background:white;
+            padding:40px;
+            border-radius:25px;
+            text-align:center;
+            box-shadow:0 15px 40px rgba(0,0,0,.12);
+            animation:floatCard 4s ease-in-out infinite
+        }
+
+        .profile-image{
+            width:180px;
+            height:180px;
+            margin:0 auto 25px;
+            border-radius:50%;
+            object-fit:cover;
+            display:block;
+            border:6px solid #2563eb;
+            box-shadow:0 10px 30px rgba(37,99,235,.3)
+        }
+
+        .hero-card h2{
+            color:#111827;
+            margin-bottom:10px
+        }
+
+        .hero-card p{
+            color:#6b7280;
+            font-size:16px
+        }
+
+        .about,.contact,.social,.skills,.testimonials,.faq{
+            background:white;
+            text-align:center;
+            padding:90px 20px
+        }
+
+        .services,.projects,.pricing{
+            padding:90px 20px;
+            text-align:center
+        }
+
+        .section-title{
+            color:#111827;
+            font-size:38px;
+            margin-bottom:30px
+        }
+
+        .about p{
+            max-width:700px;
+            margin:auto;
+            font-size:20px;
+            line-height:1.7;
+            color:#4b5563
+        }
+
+        .skills-container{
+            max-width:800px;
+            margin:0 auto;
+            text-align:left
+        }
+
+        .skill{margin-bottom:25px}
+
+        .skill-info{
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:8px
+        }
+
+        .skill-name{
+            font-size:18px;
+            font-weight:bold;
+            color:#111827
+        }
+
+        .skill-percent{
+            font-size:17px;
+            font-weight:bold;
+            color:#2563eb
+        }
+
+        .skill-bar{
+            width:100%;
+            height:14px;
+            background:#e5e7eb;
+            border-radius:20px;
+            overflow:hidden
+        }
+
+        .skill-progress{
+            height:100%;
+            background:#2563eb;
+            border-radius:20px;
+            animation:progressAnimation 1.5s ease
+        }
+
+        .html-skill{width:90%}
+        .uiux-skill{width:85%}
+        .responsive-skill{width:90%}
+        .graphic-skill{width:80%}
+
+        .service-container,
+        .project-container,
+        .testimonial-container,
+        .pricing-container{
+            display:flex;
+            justify-content:center;
+            gap:25px;
+            flex-wrap:wrap
+        }
+
+        .service-card,
+        .project-card,
+        .testimonial-card,
+        .pricing-card{
+            background:white;
+            width:280px;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 8px 25px rgba(0,0,0,.1);
+            transition:.3s
+        }
+
+        .service-card:hover,
+        .project-card:hover,
+        .testimonial-card:hover,
+        .pricing-card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 15px 35px rgba(0,0,0,.15)
+        }
+
+        .service-card h3,
+        .project-card h3{
+            color:#2563eb;
+            font-size:24px
+        }
+
+        .service-card p,
+        .project-card p{
+            font-size:17px;
+            line-height:1.6;
+            color:#4b5563
+        }
+
+        .project-card{
+            width:320px;
+            min-height:330px;
+            padding:32px;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            position:relative;
+            overflow:hidden
+        }
+
+        .project-card:before{
+            content:"";
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:5px;
+            background:#2563eb
+        }
+
+        .project-icon{
+            width:78px;
+            height:78px;
+            margin:0 auto 20px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:20px;
+            background:#eff6ff;
+            font-size:42px;
+            box-shadow:0 8px 20px rgba(37,99,235,.12)
+        }
+
+        .project-card h3{
+            margin:10px 0 12px
+        }
+
+        .project-card p{
+            margin:0
+        }
+
+        .project-tags{
+            display:flex;
+            justify-content:center;
+            gap:8px;
+            flex-wrap:wrap;
+            margin-top:18px
+        }
+
+        .project-tag{
+            background:#eff6ff;
+            color:#2563eb;
+            padding:6px 10px;
+            border-radius:20px;
+            font-size:12px;
+            font-weight:bold
+        }
+
+        .project-button{
+            background:#2563eb;
+            color:white;
+            border:none;
+            padding:12px 22px;
+            border-radius:8px;
+            font-size:16px;
+            cursor:pointer;
+            margin-top:20px;
+            transition:.3s;
+            width:100%
+        }
+
+        .project-button:hover{
+            background:#1d4ed8;
+            transform:translateY(-2px)
+        }
+
+        .pricing-card{
+            width:300px;
+            text-align:center;
+            position:relative
+        }
+
+        .pricing-card.popular{
+            border:3px solid #2563eb
+        }
+
+        .popular-label{
+            position:absolute;
+            top:-14px;
+            left:50%;
+            transform:translateX(-50%);
+            background:#2563eb;
+            color:white;
+            padding:7px 18px;
+            border-radius:20px;
+            font-size:13px;
+            font-weight:bold
+        }
+
+        .pricing-card h3{
+            color:#111827;
+            font-size:27px;
+            margin-bottom:15px
+        }
+
+        .price{
+            color:#2563eb;
+            font-size:42px;
+            font-weight:bold;
+            margin-bottom:25px
+        }
+
+        .price span{
+            font-size:17px;
+            color:#6b7280;
+            font-weight:normal
+        }
+
+        .pricing-card ul{
+            list-style:none;
+            padding:0;
+            margin:0 0 25px
+        }
+
+        .pricing-card li{
+            padding:10px 0;
+            color:#4b5563;
+            border-bottom:1px solid #e5e7eb
+        }
+
+        .pricing-button{
+            display:inline-block;
+            text-decoration:none;
+            background:#2563eb;
+            color:white;
+            padding:13px 25px;
+            border-radius:8px;
+            font-size:16px;
+            transition:.3s
+        }
+
+        .pricing-button:hover{
+            background:#1d4ed8
+        }
+
+        .testimonial-card{
+            width:320px;
+            text-align:left
+        }
+
+        .stars{
+            color:#f59e0b;
+            font-size:22px;
+            margin-bottom:15px
+        }
+
+        .testimonial-text{
+            color:#4b5563;
+            font-size:17px;
+            line-height:1.6;
+            margin-bottom:20px
+        }
+
+        .client-name{
+            color:#111827;
+            font-size:18px;
+            font-weight:bold
+        }
+
+        .client-role{
+            color:#6b7280;
+            font-size:14px;
+            margin-top:5px
+        }
+
+        .faq-container{
+            max-width:800px;
+            margin:auto;
+            text-align:left
+        }
+
+        .faq-item{
+            background:#f4f7ff;
+            margin-bottom:15px;
+            border-radius:10px;
+            overflow:hidden;
+            border:1px solid #e5e7eb
+        }
+
+        .faq-question{
+            width:100%;
+            background:#f4f7ff;
+            color:#111827;
+            border:none;
+            padding:20px;
+            text-align:left;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            display:flex;
+            justify-content:space-between;
+            align-items:center
+        }
+
+        .faq-question:hover{
+            background:#dbeafe
+        }
+
+        .faq-answer{
+            display:none;
+            padding:0 20px 20px;
+            color:#4b5563;
+            font-size:17px;
+            line-height:1.6
+        }
+
+        .faq-answer.show{
+            display:block
+        }
+
+        .faq-icon{
+            color:#2563eb;
+            font-size:22px
+        }
+
+        .social-links{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap
+        }
+
+        .social-link{
+            width:180px;
+            padding:20px;
+            background:#f4f7ff;
+            border-radius:12px;
+            text-decoration:none;
+            color:#111827;
+            font-weight:bold;
+            font-size:18px;
+            transition:.3s
+        }
+
+        .social-link:hover{
+            transform:translateY(-7px);
+            background:#dbeafe
+        }
+
+        .social-icon{
+            display:block;
+            font-size:35px;
+            margin-bottom:10px
+        }
+
+        /* OLD CONTACT SECTION */
+        .contact-form{
+            max-width:600px;
+            margin:auto
+        }
+
+        .contact-form input,
+        .contact-form textarea{
+            width:100%;
+            padding:15px;
+            margin:10px 0;
+            border:1px solid #d1d5db;
+            border-radius:8px;
+            font-size:16px
+        }
+
+        .contact-form textarea{
+            height:150px;
+            resize:none
+        }
+
+        .contact-form button{
+            background:#2563eb;
+            color:white;
+            padding:15px 30px;
+            border:none;
+            border-radius:8px;
+            font-size:17px;
+            cursor:pointer
+        }
+
+        .contact-form button:hover{
+            background:#1d4ed8
+        }
+
+        footer{
+            background:#111827;
+            color:white;
+            padding:55px 20px 25px
+        }
+
+        .footer-container{
+            max-width:1100px;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+            gap:50px;
+            flex-wrap:wrap
+        }
+
+        .footer-column{
+            flex:1;
+            min-width:220px
+        }
+
+        .footer-column h3{
+            color:white;
+            font-size:21px;
+            margin-bottom:20px
+        }
+
+        .footer-column p{
+            color:#d1d5db;
+            line-height:1.7;
+            font-size:16px
+        }
+
+        .footer-links{
+            list-style:none;
+            padding:0;
+            margin:0
+        }
+
+        .footer-links li{
+            margin-bottom:10px
+        }
+
+        .footer-links a{
+            color:#d1d5db;
+            text-decoration:none;
+            transition:.3s
+        }
+
+        .footer-links a:hover{
+            color:#60a5fa
+        }
+
+        .footer-social{
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap
+        }
+
+        .footer-social a{
+            width:42px;
+            height:42px;
+            border-radius:50%;
+            background:#1f2937;
+            color:white;
+            text-decoration:none;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:18px;
+            transition:.3s
+        }
+
+        .footer-social a:hover{
+            background:#2563eb;
+            transform:translateY(-4px)
+        }
+
+        .footer-bottom{
+            max-width:1100px;
+            margin:40px auto 0;
+            padding-top:20px;
+            border-top:1px solid #374151;
+            text-align:center
+        }
+
+        .footer-bottom p{
+            color:#9ca3af;
+            font-size:14px;
+            margin:0
+        }
+
+        .back-to-top{
+            position:fixed;
+            right:25px;
+            bottom:25px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:50px;
+            padding:13px 20px;
+            font-size:15px;
+            cursor:pointer;
+            box-shadow:0 5px 20px rgba(37,99,235,.3);
+            transition:.3s
+        }
+
+        .back-to-top:hover{
+            background:#1d4ed8;
+            transform:translateY(-4px)
+        }
+
+        .modal{
+            display:none;
+            position:fixed;
+            z-index:2000;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            background:rgba(17,24,39,.7);
+            justify-content:center;
+            align-items:center;
+            padding:20px
+        }
+
+        .modal.show{
+            display:flex
+        }
+
+        .modal-content{
+            background:white;
+            width:100%;
+            max-width:600px;
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+            position:relative;
+            animation:modalAnimation .3s ease
+        }
+
+        .close-modal{
+            position:absolute;
+            top:15px;
+            right:20px;
+            border:none;
+            background:none;
+            font-size:30px;
+            color:#6b7280;
+            cursor:pointer
+        }
+
+        .modal-icon{
+            font-size:60px;
+            margin-bottom:15px
+        }
+
+        .modal-content h2{
+            color:#2563eb
+        }
+
+        .modal-content p{
+            color:#4b5563;
+            font-size:17px;
+            line-height:1.7
+        }
+
+        @keyframes floatCard{
+            0%{transform:translateY(0)}
+            50%{transform:translateY(-10px)}
+            100%{transform:translateY(0)}
+        }
+
+        @keyframes progressAnimation{
+            from{width:0}
+        }
+
+        @keyframes modalAnimation{
+            from{
+                opacity:0;
+                transform:scale(.85)
+            }
+            to{
+                opacity:1;
+                transform:scale(1)
+            }
+        }
+
         @media(max-width:800px){
-            nav{padding:15px 20px;flex-wrap:wrap}.menu-button{display:block}.nav-links{display:none;width:100%;flex-direction:column;gap:0;text-align:center;padding-top:15px}.nav-links.show{display:flex}
-            .nav-links a{padding:12px;border-top:1px solid #374151}.hero{padding:60px 20px}.hero-container{flex-direction:column;text-align:center;gap:40px}.hero-text{width:100%}
-            .hero h1{font-size:42px}.hero-text p{font-size:18px}.hero-buttons{justify-content:center}.hero-card{width:100%;max-width:360px;flex-basis:auto}.profile-image{width:150px;height:150px}
-            .service-card,.project-card,.testimonial-card,.pricing-card{width:90%}.skills-container,.faq-container{width:90%}.contact-form{width:90%}.social-link{width:90%;max-width:300px}
-            .footer-container{flex-direction:column;gap:30px}.back-to-top{right:15px;bottom:15px}
+
+            nav{
+                padding:15px 20px;
+                flex-wrap:wrap
+            }
+
+            .menu-button{
+                display:block
+            }
+
+            .nav-links{
+                display:none;
+                width:100%;
+                flex-direction:column;
+                gap:0;
+                text-align:center;
+                padding-top:15px
+            }
+
+            .nav-links.show{
+                display:flex
+            }
+
+            .nav-links a{
+                padding:12px;
+                border-top:1px solid #374151
+            }
+
+            .hero{
+                padding:60px 20px
+            }
+
+            .hero-container{
+                flex-direction:column;
+                text-align:center;
+                gap:40px
+            }
+
+            .hero-text{
+                width:100%
+            }
+
+            .hero h1{
+                font-size:42px
+            }
+
+            .hero-text p{
+                font-size:18px
+            }
+
+            .hero-buttons{
+                justify-content:center
+            }
+
+            .hero-card{
+                width:100%;
+                max-width:360px;
+                flex-basis:auto
+            }
+
+            .profile-image{
+                width:150px;
+                height:150px
+            }
+
+            .service-card,
+            .project-card,
+            .testimonial-card,
+            .pricing-card{
+                width:90%
+            }
+
+            .skills-container,
+            .faq-container{
+                width:90%
+            }
+
+            .contact-form{
+                width:90%
+            }
+
+            .social-link{
+                width:90%;
+                max-width:300px
+            }
+
+            .footer-container{
+                flex-direction:column;
+                gap:30px
+            }
+
+            .back-to-top{
+                right:15px;
+                bottom:15px
+            }
         }
     </style>
 </head>
+
 <body>
 
 <nav>
     <a href="#home" class="logo">Haris<span>Web</span></a>
+
     <button class="menu-button" onclick="toggleMenu()">☰</button>
+
     <div class="nav-links" id="navLinks">
         <a href="#home" onclick="closeMenu()">Home</a>
         <a href="#about" onclick="closeMenu()">About</a>
@@ -97,140 +875,322 @@
     </div>
 </nav>
 
+
 <section class="hero" id="home">
+
     <div class="hero-container">
+
         <div class="hero-text">
+
             <div class="small-text">WEB DESIGNER</div>
+
             <h1>Hello, I am <span>Haris</span></h1>
-            <p>I create modern, professional and responsive websites that help businesses and individuals build a strong online presence.</p>
+
+            <p>
+                I create modern, professional and responsive websites
+                that help businesses and individuals build a strong
+                online presence.
+            </p>
+
             <div class="hero-buttons">
-                <button class="primary-button" onclick="goToContact()">Get Started</button>
-                <button class="secondary-button" onclick="goToProjects()">View Projects</button>
+
+                <button class="primary-button" onclick="goToContact()">
+                    Get Started
+                </button>
+
+                <button class="secondary-button" onclick="goToProjects()">
+                    View Projects
+                </button>
+
             </div>
+
         </div>
+
 
         <div class="hero-card">
+
             <img src="mine.jpg" alt="Haris" class="profile-image">
+
             <h2>Haris Web Design</h2>
+
             <p>Modern • Creative • Responsive</p>
+
         </div>
+
     </div>
+
 </section>
+
 
 <section class="about" id="about">
+
     <h2 class="section-title">About Me</h2>
-    <p>I am a web designer who creates modern, responsive and professional websites for businesses and individuals.</p>
+
+    <p>
+        I am a web designer who creates modern,
+        responsive and professional websites for
+        businesses and individuals.
+    </p>
+
 </section>
+
 
 <section class="services" id="services">
+
     <h2 class="section-title">My Services</h2>
+
     <div class="service-container">
+
         <div class="service-card">
             <h3>Website Design</h3>
-            <p>I create modern and professional websites for businesses and individuals.</p>
+            <p>
+                I create modern and professional websites
+                for businesses and individuals.
+            </p>
         </div>
+
         <div class="service-card">
             <h3>UI/UX Design</h3>
-            <p>I design clean and user-friendly website interfaces.</p>
+            <p>
+                I design clean and user-friendly
+                website interfaces.
+            </p>
         </div>
+
         <div class="service-card">
             <h3>Responsive Design</h3>
-            <p>I make websites that work properly on mobile, tablet and desktop.</p>
+            <p>
+                I make websites that work properly
+                on mobile, tablet and desktop.
+            </p>
         </div>
+
     </div>
+
 </section>
+
 
 <section class="skills" id="skills">
+
     <h2 class="section-title">My Skills</h2>
+
     <div class="skills-container">
+
         <div class="skill">
-            <div class="skill-info"><span class="skill-name">HTML & CSS</span><span class="skill-percent">90%</span></div>
-            <div class="skill-bar"><div class="skill-progress html-skill"></div></div>
+
+            <div class="skill-info">
+                <span class="skill-name">HTML & CSS</span>
+                <span class="skill-percent">90%</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-progress html-skill"></div>
+            </div>
+
         </div>
+
+
         <div class="skill">
-            <div class="skill-info"><span class="skill-name">UI/UX Design</span><span class="skill-percent">85%</span></div>
-            <div class="skill-bar"><div class="skill-progress uiux-skill"></div></div>
+
+            <div class="skill-info">
+                <span class="skill-name">UI/UX Design</span>
+                <span class="skill-percent">85%</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-progress uiux-skill"></div>
+            </div>
+
         </div>
+
+
         <div class="skill">
-            <div class="skill-info"><span class="skill-name">Responsive Design</span><span class="skill-percent">90%</span></div>
-            <div class="skill-bar"><div class="skill-progress responsive-skill"></div></div>
+
+            <div class="skill-info">
+                <span class="skill-name">Responsive Design</span>
+                <span class="skill-percent">90%</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-progress responsive-skill"></div>
+            </div>
+
         </div>
+
+
         <div class="skill">
-            <div class="skill-info"><span class="skill-name">Graphic Design</span><span class="skill-percent">80%</span></div>
-            <div class="skill-bar"><div class="skill-progress graphic-skill"></div></div>
+
+            <div class="skill-info">
+                <span class="skill-name">Graphic Design</span>
+                <span class="skill-percent">80%</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-progress graphic-skill"></div>
+            </div>
+
         </div>
+
     </div>
+
 </section>
 
+
 <section class="projects" id="projects">
+
     <h2 class="section-title">My Projects</h2>
+
     <div class="project-container">
 
+
         <div class="project-card">
+
             <div>
+
                 <div class="project-icon">🌐</div>
+
                 <h3>Business Website</h3>
-                <p>A modern and responsive business website designed with a clean, professional layout and user-friendly experience.</p>
+
+                <p>
+                    A modern and responsive business website
+                    designed with a clean, professional layout
+                    and user-friendly experience.
+                </p>
+
                 <div class="project-tags">
                     <span class="project-tag">HTML</span>
                     <span class="project-tag">CSS</span>
                     <span class="project-tag">Responsive</span>
                 </div>
+
             </div>
-            <button class="project-button" onclick="openProject('🌐','Business Website','A modern and professional business website with responsive design, clean layout and user-friendly navigation.')">View Project</button>
+
+            <button
+                class="project-button"
+                onclick="openProject(
+                '🌐',
+                'Business Website',
+                'A modern and professional business website with responsive design, clean layout and user-friendly navigation.'
+                )">
+                View Project
+            </button>
+
         </div>
 
+
         <div class="project-card">
+
             <div>
+
                 <div class="project-icon">🎨</div>
+
                 <h3>Portfolio Website</h3>
-                <p>A clean personal portfolio website for a creative professional.</p>
+
+                <p>
+                    A clean personal portfolio website
+                    for a creative professional.
+                </p>
+
                 <div class="project-tags">
                     <span class="project-tag">UI/UX</span>
                     <span class="project-tag">Modern</span>
                     <span class="project-tag">Creative</span>
                 </div>
+
             </div>
-            <button class="project-button" onclick="openProject('🎨','Portfolio Website','A stylish personal portfolio website designed to showcase skills, projects, services and professional experience.')">View Project</button>
+
+            <button
+                class="project-button"
+                onclick="openProject(
+                '🎨',
+                'Portfolio Website',
+                'A stylish personal portfolio website designed to showcase skills, projects, services and professional experience.'
+                )">
+                View Project
+            </button>
+
         </div>
 
+
         <div class="project-card">
+
             <div>
+
                 <div class="project-icon">📱</div>
+
                 <h3>Mobile Friendly Website</h3>
-                <p>A responsive website that works smoothly on mobile devices.</p>
+
+                <p>
+                    A responsive website that works
+                    smoothly on mobile devices.
+                </p>
+
                 <div class="project-tags">
                     <span class="project-tag">Mobile</span>
                     <span class="project-tag">Tablet</span>
                     <span class="project-tag">Desktop</span>
                 </div>
+
             </div>
-            <button class="project-button" onclick="openProject('📱','Mobile Friendly Website','A responsive website optimized for mobile, tablet and desktop screens with a smooth user experience.')">View Project</button>
+
+            <button
+                class="project-button"
+                onclick="openProject(
+                '📱',
+                'Mobile Friendly Website',
+                'A responsive website optimized for mobile, tablet and desktop screens with a smooth user experience.'
+                )">
+                View Project
+            </button>
+
         </div>
 
     </div>
+
 </section>
 
+
 <section class="pricing" id="pricing">
+
     <h2 class="section-title">Pricing Plans</h2>
+
     <div class="pricing-container">
 
+
         <div class="pricing-card">
+
             <h3>Basic</h3>
-            <div class="price">$50 <span>/project</span></div>
+
+            <div class="price">
+                $50 <span>/project</span>
+            </div>
+
             <ul>
                 <li>1 Page Website</li>
                 <li>Responsive Design</li>
                 <li>Basic Styling</li>
                 <li>3 Days Delivery</li>
             </ul>
-            <a href="#contact" class="pricing-button">Get Started</a>
+
+            <a href="#contact" class="pricing-button">
+                Get Started
+            </a>
+
         </div>
 
+
         <div class="pricing-card popular">
-            <div class="popular-label">MOST POPULAR</div>
+
+            <div class="popular-label">
+                MOST POPULAR
+            </div>
+
             <h3>Standard</h3>
-            <div class="price">$100 <span>/project</span></div>
+
+            <div class="price">
+                $100 <span>/project</span>
+            </div>
+
             <ul>
                 <li>5 Page Website</li>
                 <li>Responsive Design</li>
@@ -238,12 +1198,22 @@
                 <li>Animations</li>
                 <li>5 Days Delivery</li>
             </ul>
-            <a href="#contact" class="pricing-button">Get Started</a>
+
+            <a href="#contact" class="pricing-button">
+                Get Started
+            </a>
+
         </div>
 
+
         <div class="pricing-card">
+
             <h3>Premium</h3>
-            <div class="price">$200 <span>/project</span></div>
+
+            <div class="price">
+                $200 <span>/project</span>
+            </div>
+
             <ul>
                 <li>10 Page Website</li>
                 <li>Advanced UI/UX</li>
@@ -251,201 +1221,514 @@
                 <li>Mobile Optimization</li>
                 <li>7 Days Delivery</li>
             </ul>
-            <a href="#contact" class="pricing-button">Get Started</a>
+
+            <a href="#contact" class="pricing-button">
+                Get Started
+            </a>
+
         </div>
 
     </div>
+
 </section>
+
 
 <section class="testimonials" id="testimonials">
+
     <h2 class="section-title">Client Reviews</h2>
+
     <div class="testimonial-container">
 
-        <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"Haris created a clean and professional website for my business. I really liked the final design."</p>
-            <div class="client-name">Ahmed Khan</div>
-            <div class="client-role">Business Owner</div>
-        </div>
 
         <div class="testimonial-card">
+
             <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"The website looks modern, works perfectly on mobile and was completed professionally."</p>
-            <div class="client-name">Ali Raza</div>
-            <div class="client-role">Entrepreneur</div>
+
+            <p class="testimonial-text">
+                "Haris created a clean and professional website
+                for my business. I really liked the final design."
+            </p>
+
+            <div class="client-name">
+                Ahmed Khan
+            </div>
+
+            <div class="client-role">
+                Business Owner
+            </div>
+
         </div>
 
+
         <div class="testimonial-card">
+
             <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"Great communication and a very nice responsive website. Highly recommended."</p>
-            <div class="client-name">Usman Malik</div>
-            <div class="client-role">Freelancer</div>
+
+            <p class="testimonial-text">
+                "The website looks modern, works perfectly
+                on mobile and was completed professionally."
+            </p>
+
+            <div class="client-name">
+                Ali Raza
+            </div>
+
+            <div class="client-role">
+                Entrepreneur
+            </div>
+
+        </div>
+
+
+        <div class="testimonial-card">
+
+            <div class="stars">★★★★★</div>
+
+            <p class="testimonial-text">
+                "Great communication and a very nice
+                responsive website. Highly recommended."
+            </p>
+
+            <div class="client-name">
+                Usman Malik
+            </div>
+
+            <div class="client-role">
+                Freelancer
+            </div>
+
         </div>
 
     </div>
+
 </section>
+
 
 <section class="faq" id="faq">
-    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <h2 class="section-title">
+        Frequently Asked Questions
+    </h2>
+
     <div class="faq-container">
 
+
         <div class="faq-item">
-            <button class="faq-question" onclick="toggleFAQ(1)">
+
+            <button
+                class="faq-question"
+                onclick="toggleFAQ(1)">
+
                 How long does a website take?
+
                 <span class="faq-icon" id="icon1">+</span>
+
             </button>
-            <div class="faq-answer" id="answer1">A simple website can usually be completed within a few days, depending on the number of pages and required features.</div>
+
+            <div class="faq-answer" id="answer1">
+
+                A simple website can usually be completed
+                within a few days, depending on the number
+                of pages and required features.
+
+            </div>
+
         </div>
 
+
         <div class="faq-item">
-            <button class="faq-question" onclick="toggleFAQ(2)">
+
+            <button
+                class="faq-question"
+                onclick="toggleFAQ(2)">
+
                 Will my website work on mobile?
+
                 <span class="faq-icon" id="icon2">+</span>
+
             </button>
-            <div class="faq-answer" id="answer2">Yes. The website is designed to be responsive so it can adjust to mobile, tablet and desktop screens.</div>
+
+            <div class="faq-answer" id="answer2">
+
+                Yes. The website is designed to be responsive
+                so it can adjust to mobile, tablet and
+                desktop screens.
+
+            </div>
+
         </div>
 
+
         <div class="faq-item">
-            <button class="faq-question" onclick="toggleFAQ(3)">
+
+            <button
+                class="faq-question"
+                onclick="toggleFAQ(3)">
+
                 Can I request changes?
+
                 <span class="faq-icon" id="icon3">+</span>
+
             </button>
-            <div class="faq-answer" id="answer3">Yes. Changes and revisions can be discussed according to the selected project package.</div>
+
+            <div class="faq-answer" id="answer3">
+
+                Yes. Changes and revisions can be discussed
+                according to the selected project package.
+
+            </div>
+
         </div>
 
+
         <div class="faq-item">
-            <button class="faq-question" onclick="toggleFAQ(4)">
+
+            <button
+                class="faq-question"
+                onclick="toggleFAQ(4)">
+
                 Do you design custom websites?
+
                 <span class="faq-icon" id="icon4">+</span>
+
             </button>
-            <div class="faq-answer" id="answer4">Yes. Every project can be customized according to the client's requirements, content and preferred style.</div>
+
+            <div class="faq-answer" id="answer4">
+
+                Yes. Every project can be customized according
+                to the client's requirements, content and
+                preferred style.
+
+            </div>
+
         </div>
 
     </div>
+
 </section>
+
 
 <section class="social" id="social">
-    <h2 class="section-title">Connect With Me</h2>
+
+    <h2 class="section-title">
+        Connect With Me
+    </h2>
+
     <div class="social-links">
-        <a href="https://www.facebook.com/" target="_blank" class="social-link"><span class="social-icon">📘</span>Facebook</a>
-        <a href="https://www.instagram.com/" target="_blank" class="social-link"><span class="social-icon">📸</span>Instagram</a>
-        <a href="https://www.linkedin.com/" target="_blank" class="social-link"><span class="social-icon">💼</span>LinkedIn</a>
+
+        <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            class="social-link">
+
+            <span class="social-icon">📘</span>
+            Facebook
+
+        </a>
+
+
+        <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            class="social-link">
+
+            <span class="social-icon">📸</span>
+            Instagram
+
+        </a>
+
+
+        <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            class="social-link">
+
+            <span class="social-icon">💼</span>
+            LinkedIn
+
+        </a>
+
     </div>
+
 </section>
+
+
+<!-- PURANA CONTACT SECTION -->
 
 <section class="contact" id="contact">
-    <h2 class="section-title">Contact Me</h2>
-    <form class="contact-form" onsubmit="sendMessage(event)">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+
+    <h2 class="section-title">
+        Contact Me
+    </h2>
+
+    <form
+        class="contact-form"
+        onsubmit="sendMessage(event)">
+
+        <input
+            type="text"
+            placeholder="Your Name"
+            required>
+
+        <input
+            type="email"
+            placeholder="Your Email"
+            required>
+
+        <textarea
+            placeholder="Your Message"
+            required></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
     </form>
+
 </section>
 
+
 <footer>
+
     <div class="footer-container">
 
+
         <div class="footer-column">
+
             <h3>Haris Web Design</h3>
-            <p>Modern, creative and responsive websites for businesses and individuals.</p>
+
+            <p>
+                Modern, creative and responsive websites
+                for businesses and individuals.
+            </p>
+
         </div>
 
+
         <div class="footer-column">
+
             <h3>Quick Links</h3>
+
             <ul class="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
             </ul>
+
         </div>
 
+
         <div class="footer-column">
+
             <h3>Follow Me</h3>
+
             <div class="footer-social">
-                <a href="https://www.facebook.com/" target="_blank">f</a>
-                <a href="https://www.instagram.com/" target="_blank">ig</a>
-                <a href="https://www.linkedin.com/" target="_blank">in</a>
+
+                <a
+                    href="https://www.facebook.com/"
+                    target="_blank">
+                    f
+                </a>
+
+                <a
+                    href="https://www.instagram.com/"
+                    target="_blank">
+                    ig
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank">
+                    in
+                </a>
+
             </div>
+
         </div>
 
     </div>
+
 
     <div class="footer-bottom">
-        <p>© 2026 Haris Web Design. All Rights Reserved.</p>
+
+        <p>
+            © 2026 Haris Web Design. All Rights Reserved.
+        </p>
+
     </div>
+
 </footer>
 
-<div class="modal" id="projectModal" onclick="closeModalOutside(event)">
+
+<div
+    class="modal"
+    id="projectModal"
+    onclick="closeModalOutside(event)">
+
     <div class="modal-content">
-        <button class="close-modal" onclick="closeProject()">×</button>
-        <div class="modal-icon" id="modalIcon">🌐</div>
-        <h2 id="modalTitle">Project Title</h2>
-        <p id="modalDescription">Project description.</p>
+
+        <button
+            class="close-modal"
+            onclick="closeProject()">
+            ×
+        </button>
+
+        <div
+            class="modal-icon"
+            id="modalIcon">
+            🌐
+        </div>
+
+        <h2 id="modalTitle">
+            Project Title
+        </h2>
+
+        <p id="modalDescription">
+            Project description.
+        </p>
+
     </div>
+
 </div>
 
-<button class="back-to-top" onclick="goToTop()">↑ Back to Top</button>
+
+<button
+    class="back-to-top"
+    onclick="goToTop()">
+
+    ↑ Back to Top
+
+</button>
+
 
 <script>
+
 function toggleMenu(){
-    document.getElementById("navLinks").classList.toggle("show")
+    document
+        .getElementById("navLinks")
+        .classList
+        .toggle("show");
 }
 
 function closeMenu(){
-    document.getElementById("navLinks").classList.remove("show")
+    document
+        .getElementById("navLinks")
+        .classList
+        .remove("show");
 }
 
 function goToContact(){
-    document.getElementById("contact").scrollIntoView({behavior:"smooth"})
+    document
+        .getElementById("contact")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 }
 
 function goToProjects(){
-    document.getElementById("projects").scrollIntoView({behavior:"smooth"})
+    document
+        .getElementById("projects")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 }
 
 function goToTop(){
-    window.scrollTo({top:0,behavior:"smooth"})
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 function toggleFAQ(number){
-    let answer=document.getElementById("answer"+number)
-    let icon=document.getElementById("icon"+number)
+
+    let answer =
+        document.getElementById("answer"+number);
+
+    let icon =
+        document.getElementById("icon"+number);
 
     if(answer.classList.contains("show")){
-        answer.classList.remove("show")
-        icon.textContent="+"
+
+        answer.classList.remove("show");
+        icon.textContent="+";
+
     }else{
-        answer.classList.add("show")
-        icon.textContent="−"
+
+        answer.classList.add("show");
+        icon.textContent="−";
+
     }
+
 }
 
 function openProject(icon,title,description){
-    document.getElementById("modalIcon").textContent=icon
-    document.getElementById("modalTitle").textContent=title
-    document.getElementById("modalDescription").textContent=description
-    document.getElementById("projectModal").classList.add("show")
+
+    document.getElementById("modalIcon").textContent=icon;
+
+    document.getElementById("modalTitle").textContent=title;
+
+    document.getElementById("modalDescription").textContent=description;
+
+    document
+        .getElementById("projectModal")
+        .classList
+        .add("show");
 }
 
 function closeProject(){
-    document.getElementById("projectModal").classList.remove("show")
+
+    document
+        .getElementById("projectModal")
+        .classList
+        .remove("show");
+
 }
 
 function closeModalOutside(event){
+
     if(event.target.id==="projectModal"){
-        closeProject()
+        closeProject();
     }
+
 }
 
 function sendMessage(event){
-    event.preventDefault()
-    let name=event.target.querySelector('input[type="text"]').value
-    alert("Thank you, "+name+"! Your message has been received.")
-    event.target.reset()
+
+    event.preventDefault();
+
+    let name =
+        event.target
+        .querySelector('input[type="text"]')
+        .value;
+
+    alert(
+        "Thank you, "+name+
+        "! Your message has been received."
+    );
+
+    event.target.reset();
+
 }
+
 </script>
 
 </body>
